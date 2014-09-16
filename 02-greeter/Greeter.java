@@ -13,7 +13,8 @@ public class Greeter {
 
     */
     public void greet() {
-	System.out.println("Hello world!");
+	String s = new String("Hello world");
+	System.out.println(s);
 	ungreet();
     }
     
