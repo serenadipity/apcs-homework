@@ -9,8 +9,8 @@ public class Driver {
 	
 	public boolean mixStart(String str) {
 	    if (str.length() < 3)return false;
-	    String two = str.substring(1,3);
-	    return (two.equals("ix"));
+	    String y = str.substring(1,3);
+	    return (y.equals("ix"));
 	}
 	
 	public String firstHalf(String str) {
