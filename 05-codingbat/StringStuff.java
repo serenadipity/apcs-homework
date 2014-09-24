@@ -1,3 +1,5 @@
+/* working with Pooneet */
+
 public class StringStuff {
 
     public String nonStart(String a, String b) {
@@ -17,4 +19,29 @@ public class StringStuff {
 	if (first > 0) return first;
 	else return (first * -1 * 2);
     }
+    
+    public boolean nearHundred(int n) {
+	int a = Math.abs(100-n);
+	int b = Math.abs(200-n);
+	if (a <= 10) return true;
+	if (b <= 10) return true;
+	else return false;
+   }
+
+    public boolean mixStart(String str) {
+	if (str.length() < 3)return false;
+        String y = str.substring(1,3);
+        return (y.equals("ix"));
+    }
+
+    public int teaParty(int tea, int candy) {
+	if ( (tea < 5) || (candy < 5) ) return 0;
+	if ( (tea/candy>=2) || (candy/tea>=2) ) return 2;
+	if ( (tea>=5) || (candy>=5)) return 1;
+	else return 0;
+    }
+
+  }
+
+    
 }
