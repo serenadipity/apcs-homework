@@ -1,0 +1,58 @@
+/*
+  This HW took me about 2.5 hours because I kept getting errors like "String
+  index out of range" and I had to modify my code many many times.
+*/
+
+public class Loops {
+
+	public String frontTimes(String str, int n) {
+	      int a = 3;
+	      if (a > str.length()) {
+		  a = str.length();
+	      }
+	      String z = str.substring(0, a);
+	      String s = "";
+	      while (n-1 >= 0) {
+		  s = s + z;
+		  n = n -1;
+	      }
+	      return s;
+	}
+
+	public String stringBits(String str) {
+	    String s = "";
+	    int i = 0;
+	    while (i < str.length()) {
+		s = s + str.charAt(i);
+		i = i + 2;
+	    }
+	    return s;
+	}
+
+	public String stringYak(String str) {
+	    String s = "";
+	    int i = 0;
+	    while (i < str.length()) {
+		if (i + 2 < str.length() && str.charAt(i) == 'y' && str.charAt(i + 2) == 'k') {
+		    i = i + 3;
+		}
+		else {
+		    s = s + str.charAt(i);
+		    i = i + 1;
+		}
+	    }
+	    return s;
+	}
+
+	public int stringMatch(String a, String b) {
+	    int i = 0;
+	    int c = 0;
+	    while ((c < (a.length() - 1)) && (c < b.length() - 1)) {
+		if (a.charAt(c) == b.charAt(c) && a.charAt(c + 1) == b.charAt(c + 1)) {
+		    i = i + 1;
+		}
+		c = c + 1;
+	    }
+	    return i;
+	}
+}
