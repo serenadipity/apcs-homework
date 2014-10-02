@@ -1,0 +1,15 @@
+public class Loops3 {
+    public String tri3(int h) {
+	String s = "";
+	int i = 0;
+	int j;
+	while (i < h) {
+	    j = 0;
+	    while (j < 1){
+		s = s _ "*";
+		i = i + 1;
+	    }
+	}
+	return s;
+    }
+}
