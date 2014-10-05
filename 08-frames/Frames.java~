@@ -1,0 +1,16 @@
+public class Frames {
+    public String frame(int r, int c) {
+	String s = "";
+	return s;
+    }
+
+    public String stringSplosion(String str) {
+	String s = "";
+	int len = str.length();
+	for (int i = 1; i <= len; i = i + 1) {
+	    s = s + str.substring(0, i);
+	}
+	return s;
+    }
+
+}
