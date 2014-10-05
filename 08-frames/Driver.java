@@ -4,5 +4,7 @@ public class Driver {
 	//	System.out.println(f.line(4));
 	//	System.out.println(f.line2(4));
 	System.out.println(f.frame(5,4));
+	System.out.println(f.stringSplosion("Pizza"));
+	System.out.println(f.stringX("xhelloxxxxworldx"));
     }
 }
