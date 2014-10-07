@@ -1,0 +1,15 @@
+/* subclass of BaseChar */
+
+public class Warrior extends BaseChar {
+
+    private int health=20;
+
+    public int getHealth() {
+	return health;
+    }
+
+    public void = setHealth(int i){
+	health = i;
+    }
+    
+}

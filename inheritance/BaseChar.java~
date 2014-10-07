@@ -1,0 +1,17 @@
+/*superclass of Warrior */
+
+public class BaseChar {
+    private int healthboost=5;
+
+    /*public int getHealth() {
+	return health;
+    }
+
+    public void baseSetHealth(int i) {
+	health = i
+    }
+
+    public void warriorSetHealth(int i) {
+	health = i
+	}*/
+}
