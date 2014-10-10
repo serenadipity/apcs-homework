@@ -1,4 +1,3 @@
-
 public class Mage extends Basechar{
     private int manna = 200;
 
