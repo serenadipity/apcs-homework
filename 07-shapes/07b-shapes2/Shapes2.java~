@@ -1,0 +1,15 @@
+public class Shapes2 {
+    
+    public String tri3(int height) {
+	int r;
+	String s = "";
+	int i;
+	for (r = 0; r < height; r++){
+	    for (i = 0; i < height-r-1; i++){
+		s = s + ".";
+	    }
+	    s = s + "\n";
+	}
+	return s;
+    }
+}

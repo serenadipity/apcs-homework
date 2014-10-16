@@ -1,0 +1,22 @@
+/* Write a method that will return a string representing a box of '*'s
+   i.e. box(4,3) will return:
+   ***
+   ***
+   ***
+   ***
+   will return a /n in the string to represent a new line
+*/
+
+public String box(int r, int c) {
+    String s = "";
+    int z = c
+    while (r > 0) {
+	while (c > 0) {
+	    s = s + "*";
+	    c = c - 1;
+	}
+	s = s + "/n";
+	c = z
+	r = r - 1;
+    }
+}
