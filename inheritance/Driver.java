@@ -1,6 +1,7 @@
 public class Driver {
 
     public static void main(String[] args){
+	/*
 	Basechar c = new Basechar(),c2;
 	Warrior w = new Warrior(),w2;
 	Mage m = new Mage(),m2;
@@ -11,8 +12,8 @@ public class Driver {
 	w.attack(m);
 	m.attack(w);
 	w.attack(w);
-
-	System.out.println(w.toString());
+	*/
+        Warrior w = new Warrior();
 	System.out.println(w);
     }
 

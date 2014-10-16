@@ -1,0 +1,13 @@
+public class Complex{
+    
+    private int a,b;
+    
+    public Complex(int x, inty) {
+	a = x;
+	b = y;
+    }
+
+    public String toString() {
+	String s = a + " + " +  b+"i";
+	return s;
+    }

@@ -1,12 +1,14 @@
 /* superclass of Warrior and Mage */
-public class Basechar {
+public class BaseChar {
     private int health=20;
     private String name="default name";
-
+    /*public BaseChar(String n) {
+	setName(n);
+      }*/
     public String toString(){
 	return this.getName();
     }
-    public void attack(Basechar other){
+    public void attack(BaseChar other){
 	//System.out.println(this.getName()+" is attacking "+other.getName());
 	// toString is automatically called when you put a class instance in a string
 	// context
