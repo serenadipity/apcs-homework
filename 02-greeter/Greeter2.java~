@@ -1,0 +1,8 @@
+public class Greeter2 {
+   
+    private String greeter = new String("Hello");
+
+    public Greeter2(String g) {
+       greeting = g;
+    }
+}

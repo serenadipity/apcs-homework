@@ -1,0 +1,6 @@
+public Class Driver5{
+    public static void main(String[] args) {
+
+	System.outprintln(g1.greetPerson("Tom"));
+	System.out.println(g1.greetPerson("Sarah"));
+    }
