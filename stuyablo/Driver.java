@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Driver {
 
-   public static void twosecs() {
+   public static void twosec() {
        try {
 	   Thread.sleep(2000);
 	   } catch (Exception e) {}
@@ -30,15 +30,14 @@ public class Driver {
 	}
 	*/
 	System.out.println("A mysterious figure approaches...");	
-
+	twosec();
 	System.out.println("'I command you...tell me asl ;)'");
-	twosecs();
-	Scanner scan1 = new Scanner(System.in);
-	String nametroll = scan1.nextLine();
-	System.out.println("Excellent!");
-	System.out.println("What is your name hottie? ;)");
-	Scanner scan2 = new Scanner(System.in);
-	String name = scan2.nextLine();
+	String nametroll = scan.nextLine();
+	twosec();
+	System.out.println("'Excellent!'");
+	twosec();
+	System.out.println("'What is your name hottie? ;)'");
+	String name = scan.nextLine();
         
 	
     }
