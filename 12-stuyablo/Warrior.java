@@ -1,6 +1,7 @@
 public class Warrior extends Basechar{
-
- 
+    public Warrior(){
+	this.setStrength(randomValue(10,21));
+    }
 
     // Powerful attack that deals 1.5 damage, reduces Stamina by 5
     public String swipe(Basechar opponent){
@@ -15,17 +16,19 @@ public class Warrior extends Basechar{
 	    
 		opponent.setHealth((int)newHealth);
 	    
-		String s = this + " hit " + opponent + " with his sword!";
+		String s = this + " hit " + opponent + " with a sword!";
 		s = s + "\n" + "The attack dealt " + Damage + " damage.";
-		s = s + "\n" + opponent + " now has " + opponent.getHealth() + " health.";
+		s = s + "\n" + opponent + " now has " + opponent.getHealth() + " health.\n";
 		return s;
 	    }
 
 	    //What if the opponent blocks?
 	    else {
 		double newHealth = opponent.getHealth() - (Damage - opponent.getDefense());
-		String s = opponent + " has blocked " + this + "'s attack!";
+		String s = opponent + " has blocked " + this + "'s attack!\n";
 		opponent.setHealth((int)newHealth);
+		s = s + "The attack dealt " + Math.round(Damage - opponent.getDefense()) +" damage.\n" ;
+		s = s + opponent + " now has " + opponent.getHealth() + " health.\n";
 		return s;
 		    }
 
@@ -33,7 +36,7 @@ public class Warrior extends Basechar{
 	
 	//If the attack misses
 	else {
-	    String s = this + "'s attack missed!";
+	    String s = this + "'s attack missed!\n";
 	    return s;
 		}
     }
@@ -44,12 +47,6 @@ public class Warrior extends Basechar{
 
 
     //####################################NEW ATTACK#####################################
-
-
-
-
-
-
 
 
 
@@ -65,17 +62,19 @@ public class Warrior extends Basechar{
 	    
 		opponent.setHealth((int)newHealth);
 	    
-		String s = this + " stabs " + opponent + " with his dagger!";
+		String s = this + " stabs " + opponent + " with a  dagger!";
 		s = s + "\n" + "The attack dealt " + Damage + " damage.";
-		s = s + "\n" + opponent + " now has " + opponent.getHealth() + " health.";
+		s = s + "\n" + opponent + " now has " + opponent.getHealth() + " health.\n";
 		return s;
 	    }
 
 	    //What if the opponent blocks?
 	    else {
 		double newHealth = opponent.getHealth() - (Damage - opponent.getDefense());
-		String s = opponent + " has blocked " + this + "'s attack!";
+		String s = opponent + " has blocked " + this + "'s attack!\n";
 		opponent.setHealth((int)newHealth);
+		s = s + "The attack dealt " + Math.round(Damage - opponent.getDefense()) + " damage.";
+		s = s + "\n" +  opponent + " now has " + opponent.getHealth() + " health.\n";
 		return s;
 		    }
 
@@ -83,7 +82,7 @@ public class Warrior extends Basechar{
 	
 	//If the attack misses
 	else {
-	    String s = this + "'s attack missed!";
+	    String s = this + "'s attack missed!\n";
 	    return s;
 		}
     }

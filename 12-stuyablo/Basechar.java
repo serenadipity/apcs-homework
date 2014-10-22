@@ -72,7 +72,6 @@ public abstract class Basechar{
 	s += "Speed:   " + speed + "\n";
 	s += "Defense: " + defense + "\n";
 	s += "Strength:" + strength + "\n";
-	s += "M Skill: " + magic + "\n";
 	//only problem is we might want to include
 	//mana in this
 	return s;
@@ -103,20 +102,20 @@ public abstract class Basechar{
     
     //default physical attack for all!
     public String punch(Basechar opponent){
-	String s = name + " is attacking " + opponent + ".\n";
+	String s = "";
 	if (Success()){
 	    int newHealth = opponent.getHealth() - this.strength;
 	    //deals damage equivalent to strength stat
 	    opponent.setHealth(newHealth);
 
-	    s = s + "Attack Successfull!\n";
+	    s = s + this + " punched " + opponent + "!\n";
 	    s = s + this.strength + "pts damage dealt, ";
 	    s = s + opponent + " now has " + opponent.getHealth() + "hp.\n";
 	    //prints damage meassage
 	    //I used hp to refer to hit points, hope that's okay
 	    return s;
 	} else {
-	    return "Attack Failed!\n";
+	    return this + " tried to punch "+ opponent + " and failed!\n";
 	}
     }
     
