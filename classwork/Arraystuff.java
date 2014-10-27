@@ -4,12 +4,17 @@ import java.util.*;
 import java.util.*;
 
 public class Arraystuff {
+
+    /*-------------------------Instance Variables----------------------*/
+
     private int[] a;
     private Random rnd;
     /* by making a variable final we can't change
        the value after the initial asssignment 
     */
     public final int final_example = 123;
+
+ /*-------------------------Constructors----------------------*/
 
     public Arraystuff(int n){
 	rnd = new Random();
