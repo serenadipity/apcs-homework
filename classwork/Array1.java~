@@ -1,0 +1,15 @@
+import java.io.*;
+
+public class Array1{
+    public static void main(String[] args) {
+	int[] intArray;
+	intArray = new int[100];
+	int i = 0;
+	Random r = new Random(76);
+	for (i=0; i<100; i+) {
+	    intArray[i] = r.nextInt(76) + 75;
+	}
+
+	System.out.println(intArray);
+    }
+}

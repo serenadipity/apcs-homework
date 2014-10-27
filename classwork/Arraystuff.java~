@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+public class Arraystuff{
+    private int[] array;
+    
+    public Arraystuff() {
+	a = new int[100];
+    }
+
+    public String toString() {
+	String s = ""+a.length;
+	return s;
+    }
+
+    public static void main(String[] args) {
+	Arraystuff as = new Arraystuff();
+	System.out.println(as);
+    }
+}
