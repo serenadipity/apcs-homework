@@ -43,5 +43,50 @@ public class Arraystuff2{
 	}
 	return maxnum;
     }
-		
+
+    public int sum67(int[] nums) {
+	int f = 0;
+	boolean s = true;
+	for (int i = 0;i<nums.length;i++) {
+	    if (nums[i]==6) {
+		s = false;
+	    }
+	    if (s == true) {
+		f += nums[i];
+	    }
+	    if (nums[i]==7) {
+		s = true;
+	    }
+	}
+	return f;
+    }
+    public boolean more14(int[] nums) {
+	int freq = 0;
+	int freq2 = 0;
+	for (int i=0;i<nums.length;i++) {
+	    if (nums[i] == 1) {
+		freq += 1;
+	    }
+	    if (nums[i] == 4){
+		freq2 += 1;
+	    }
+	}
+	return (freq > freq2);
+  
+    }
+
+    public int[] tenRun(int[] nums) {
+	boolean s = false;
+	int k = 0;
+	for(int i=0;i<nums.length;i++) {
+	    if (nums[i] % 10 == 0) {
+		s = true;
+		k = nums[i];
+	    }
+	    if (s == true) {
+		nums[i] = k;
+	    }
+	}
+	return nums;
+    }		
 }
