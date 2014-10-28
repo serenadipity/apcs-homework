@@ -88,5 +88,43 @@ public class Arraystuff2{
 	    }
 	}
 	return nums;
-    }		
+    }
+
+    public boolean tripleUp(int[] nums) {
+	boolean b = false;
+	for (int i = 0; i<=nums.length-3; i++) {
+	    if ((nums[i+1] == (nums[i] + 1)) && (nums[i+2] == nums[i] + 2)) {
+		b = true;
+	    }
+	}
+	return b;
+    }
+
+    public boolean canBalance(int[] nums) {
+	int count = 0;
+	for (int i = 0;i < nums.length; i++) {
+	    count += nums[i];
+	    int count2 = 0;
+	    for (int j = nums.length-1; j > i; j--) {
+		count2 += nums[j];
+	    }
+	    if (count == count2){
+		return true;
+	    }
+	}
+	return false;
+    }
+
+    public int[] seriesUp(int n) {
+	int[] a;
+	a = new int[n*(n+1)/2];
+	int k = 0;
+	for (int i=0;i <= n; i++) {
+	    for (int j = 1; j <=i; j++, k++) {
+		a[k] = j;
+	    }
+	}
+	return a;
+  
+    }
 }
