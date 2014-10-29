@@ -1,11 +1,11 @@
 import java.io.*;
 import java.util.*;
 
-public class Arraystuff2{
+public class Arraystuff{
     private int[] a;
     private Random rnd;
 
-    public Arraystuff2(int n){
+    public Arraystuff(int n){
 	rnd = new Random();
 	a = new int[n];
 	for (int i=0;i<a.length;i++){
@@ -13,7 +13,7 @@ public class Arraystuff2{
 	}
     }
     
-    public Arraystuff2() {
+    public Arraystuff() {
 	this(100);
     }
 
@@ -136,5 +136,6 @@ public class Arraystuff2{
 		counter++;
 	    }
 	}
-	return counter
+	return counter;
+    }
 }
