@@ -119,4 +119,24 @@ public class Arraystuff{
 	}
 	return counter;
     }
+
+    public int maxMirror(int[] nums) {
+	int m = 0;
+	for(int i = 0; i < nums.length; i++) {
+	    int count = 0;
+	    for(int j = nums.length-1; j >= 0 && i + count < nums.length; j--) {
+		if(nums[i + count] == nums[j]) {
+		    count++;
+		} else {
+		    m = Math.max(m, count);
+		    count = 0;
+		}
+	    }
+                                                                
+	    m = Math.max(m, count);
+	}
+
+	return m;
+    }
+
 }

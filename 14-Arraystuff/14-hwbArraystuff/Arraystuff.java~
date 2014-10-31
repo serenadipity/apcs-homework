@@ -25,25 +25,6 @@ public class Arraystuff{
 	return s;
     }
 
-    public int find(int value){
-        for (int i=0;i<a.length;i++){
-	    if (a[i]==value){
-		return i;
-	    }
-	}
-	return -1;
-    }
-
-    public int maxvalue() {
-	int maxnum = a[0];
-	for(int i = 0;i<a.length;i++) {
-	    if (a[i]>maxnum) {
-		maxnum = a[i];
-	    }
-	}
-	return maxnum;
-    }
-
     public int sum67(int[] nums) {
 	int f = 0;
 	boolean s = true;
@@ -136,5 +117,6 @@ public class Arraystuff{
 		counter++;
 	    }
 	}
-	return counter
+	return counter;
+    }
 }

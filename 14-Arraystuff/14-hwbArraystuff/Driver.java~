@@ -1,7 +1,0 @@
-public class Driver {
-    public static void main(String[] args) {
-	Arraystuff2 x = new Arraystuff2();
-	System.out.println(x);
-	System.out.println(freq(4));
-    }
-}
