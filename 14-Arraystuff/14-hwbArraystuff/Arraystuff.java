@@ -120,6 +120,28 @@ public class Arraystuff{
 	return counter;
     }
 
+<<<<<<< HEAD
     //    public int mode(int[] nums) {
 	
+=======
+    public int maxMirror(int[] nums) {
+	int m = 0;
+	for(int i = 0; i < nums.length; i++) {
+	    int count = 0;
+	    for(int j = nums.length-1; j >= 0 && i + count < nums.length; j--) {
+		if(nums[i + count] == nums[j]) {
+		    count++;
+		} else {
+		    m = Math.max(m, count);
+		    count = 0;
+		}
+	    }
+                                                                
+	    m = Math.max(m, count);
+	}
+
+	return m;
+    }
+
+>>>>>>> efc49e8cd8956adefdc516b2970a9762f29648d7
 }
