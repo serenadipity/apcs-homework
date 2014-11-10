@@ -1,3 +1,5 @@
+//has a few errors that I was unable to fix
+
 public class Sarray{
     private int[] data;
     private int last;
