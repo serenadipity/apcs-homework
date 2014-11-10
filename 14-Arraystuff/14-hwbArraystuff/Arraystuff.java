@@ -9,7 +9,7 @@ public class Arraystuff{
 	rnd = new Random();
 	a = new int[n];
 	for (int i=0;i<a.length;i++){
-	    a[i] = 75+rnd.nextInt(76);
+	    a[i] = rnd.nextInt(21);
 	}
     }
     
@@ -119,4 +119,7 @@ public class Arraystuff{
 	}
 	return counter;
     }
+
+    //    public int mode(int[] nums) {
+	
 }
