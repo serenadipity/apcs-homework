@@ -24,5 +24,16 @@ public class Driver {
 	}
 	System.out.println(ai);
     
+
+        int i = 0;
+	while (i < ai.size()-1){
+	    if (ai.get(i) == ai.get(i+1)) {
+		ai.remove(i);
+	    }
+	    else {
+		i++;
+	    }
+	}
+	System.out.pringln(ai);
     }
 }
