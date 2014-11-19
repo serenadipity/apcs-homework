@@ -29,11 +29,24 @@ public class WordSearch{
 	return s;
     }
 
+    public boolean canAdd(String w, int row, int col) {
+	int r = row, c = col;
+	boolean b;
+	for (int i=0; i<w.length(); i++) {
+	    if (board[r][c] != ".") {
+		b = true;
+	    }
+	}
+	return b;
+    }
+
     public void addWordH(String w, int row, int col) {
 	int r = row, c = col;
 	for (int i=0; i<w.length();i++) {
-	    board[r][c] = w.charAt(i);
-	    c++;
+	    if (canAdd()) {
+		board[r][c] = w.charAt(i);
+		c++;
+	    }
 	}
     }
     
