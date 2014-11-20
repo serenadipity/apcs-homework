@@ -1,13 +1,18 @@
 public class Driver {
+
     public static void main(String[] args) {
-	WordSearch w = new WordSearch();
-	System.out.println(w);
-	w.addWordH("hello",3,5);
-	w.addWordV("yooo",4,8);
-	w.addWordSE("hey",6,9);
-	w.addWordNE("hiii",11,13);
-	w.addWordNW("hihi",17,15);
-	w.addWordSW("hola",14,8);
-	System.out.println(w);
+	WordSearch W = new WordSearch();
+	W.addWordVdw("opal",8,12);
+	W.addWordHlf("hello",8,8);
+	W.addWordHrt("great",7,7);
+	W.addWordVdw("there",10,9);
+	W.addWordVup("hat",6,19);
+	W.addWordSE("boo",1,1);
+	W.addWordNE("cat",13,14);
+	W.addWordSW("dog",11,4);
+	W.addWordNW("bug",19,10);
+	System.out.println(W);
+
     }
+
 }
