@@ -33,7 +33,7 @@ public class WordSearch{
 	int r = row, c = col;
 	boolean b;
 	for (int i=0; i<w.length(); i++) {
-	    if (board[r][c] != ".") {
+	    if (board[r][c] !== ".") {
 		b = true;
 	    }
 	}
@@ -43,9 +43,26 @@ public class WordSearch{
     public void addWordH(String w, int row, int col) {
 	int r = row, c = col;
 	for (int i=0; i<w.length();i++) {
-	    if (canAdd()) {
+	    if (canAdd(w, r, c)) {
 		board[r][c] = w.charAt(i);
 		c++;
+	    }
+	    if(c>board[r].length) {
+		break;
+	    }
+	}
+    }
+
+    public void addWordHback(String w, int row, int col) {
+	int r = row, c = col;
+
+	for(int i=s.length()-1;i>=0;i--) {
+	    if (canAdd(w, r, c)) {
+		board[r][c] = s.charAt(i);
+		c++;
+	    }
+	    if(c<0) { 
+		break; 
 	    }
 	}
     }
