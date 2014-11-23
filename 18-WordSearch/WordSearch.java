@@ -1,12 +1,17 @@
-import java.io.*;
 import java.util.*;
-// creates a word search puzzle
+import java.io.*;
 
 public class WordSearch {
+
+    /* ------------------------- variables ------------------------- */
 
     private char[][] board;
     private int Row;
     private int Col;
+    private Random Rand = new Random();
+    private ArrayList<String> words = new ArrayList<String>(50);
+
+    /* ------------------------- contructors ------------------------- */
 
     public WordSearch(int r, int c) {
 	Row = r;
@@ -22,6 +27,8 @@ public class WordSearch {
 	this(20,30);
     }
 
+    /* ------------------------- toString ------------------------- */
+
     public String toString() {
 	String s = "";
 	for (int i=0;i<board.length;i=i+1) {
@@ -33,7 +40,10 @@ public class WordSearch {
 	return s;
     }
 
-    public boolean checker(String w, int row, int col, int rdirection, int cdirection) {
+    /* ------------------------- add methods ------------------------- */
+
+    public boolean checker(String w, int row, int col,
+			   int rdirection, int cdirection) {
 	int r = row;
 	int c = col;
 	for(int i=0;i<w.length();i=i+1) {
@@ -133,5 +143,35 @@ public class WordSearch {
 	    }
 	}
     }
+
+    /* -------------------- puzzle building methods -------------------- */
+
+    public void ReadFile() {
+	Scanner sc = null;
+	try {
+	    sc = new Scanner(new File("words.txt"));
+	} catch (Exception e) { 
+	    System.out.println("Can't Open File");
+	    System.exit(0);
+	}
+	while (sc.hasNext()) {
+	    String s = sc.next();
+	    words.add(s);
+	}
+	System.out.println(words);
+    }
+
+    public void fillIn() {
+	for (int i=0;i<board.length;i=i+1) {
+	    for (int j=0;j<board[i].length;j=j+1) {
+		if (board[i][j] == '.') {
+		    int n = Rand.nextInt(26) + 65;
+		    char ch = (char)n;
+		    board[i][j] = ch;
+		}
+	    }
+	}
+    }
+
 
 }
