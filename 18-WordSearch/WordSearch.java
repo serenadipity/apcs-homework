@@ -8,13 +8,14 @@ public class WordSearch {
     private char[][] board;
     private int Row;
     private int Col;
+    private int numWords;
     private Random Rand = new Random();
     private String kind;
     private ArrayList<String> words = new ArrayList<String>(50);
 
     /* ------------------------- contructors ------------------------- */
 
-    public WordSearch(int r, int c, String k) {
+    public WordSearch(int r, int c, String k, int num) {
 	Row = r;
 	Col = c;
 	board = new char[r][c];
@@ -24,9 +25,10 @@ public class WordSearch {
 	    }
 	}
 	kind = k;
+	numWords = num;
     }
     public WordSearch() {
-	this(20,30,"words.txt");
+	this(20,30,"words.txt",10);
     }
 
     /* ------------------------- toString ------------------------- */
@@ -177,9 +179,10 @@ public class WordSearch {
 	    words.add(s);
 	}
     }
-
+    
     public void wordAdder() {
-	for (int i=0;i<words.size();i++) {
+	int i = 0;
+	while (i<numWords) {
 	    int r = Rand.nextInt(Row+1);
 	    int c = Rand.nextInt(Col+1);
 	    String x = words.get(i);
@@ -187,7 +190,7 @@ public class WordSearch {
 	    while (d == false) {
 		int n = Rand.nextInt(8);
 		if (n==0) {
-		   d = addWordHlf(x,r,c);
+		    d = addWordHlf(x,r,c);
 		} else if (n==1) {
 		    d = addWordHrt(x,r,c);
 		} else if (n==2) {
@@ -204,9 +207,10 @@ public class WordSearch {
 		    d = addWordSW(x,r,c);
 		}
 	    }
+	    i = i + 1;
 	}
     }
-
+    /*
     public void fillIn() {
 	for (int i=0;i<board.length;i=i+1) {
 	    for (int j=0;j<board[i].length;j=j+1) {
@@ -218,11 +222,10 @@ public class WordSearch {
 	    }
 	}
     }
-
     public void MakePuzzle() {
 	ReadFile();
 	wordAdder();
 	fillIn();
     }
-
+    */
 }
