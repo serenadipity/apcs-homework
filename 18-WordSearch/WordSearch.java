@@ -9,8 +9,14 @@ public class WordSearch {
     private int Row;
     private int Col;
     private Random Rand = new Random();
+<<<<<<< HEAD
     private String kind;
     private ArrayList<String> words = new ArrayList<String>(50);
+=======
+    private ArrayList<String> words = new ArrayList<String>(50);
+
+    /* ------------------------- contructors ------------------------- */
+>>>>>>> 0f4a15196a971c4d88b418bdabc4893ee3260607
 
     /* ------------------------- contructors ------------------------- */
 
@@ -222,5 +228,35 @@ public class WordSearch {
 	wordAdder();
 	fillIn();
     }
+
+    /* -------------------- puzzle building methods -------------------- */
+
+    public void ReadFile() {
+	Scanner sc = null;
+	try {
+	    sc = new Scanner(new File("words.txt"));
+	} catch (Exception e) { 
+	    System.out.println("Can't Open File");
+	    System.exit(0);
+	}
+	while (sc.hasNext()) {
+	    String s = sc.next();
+	    words.add(s);
+	}
+	System.out.println(words);
+    }
+
+    public void fillIn() {
+	for (int i=0;i<board.length;i=i+1) {
+	    for (int j=0;j<board[i].length;j=j+1) {
+		if (board[i][j] == '.') {
+		    int n = Rand.nextInt(26) + 65;
+		    char ch = (char)n;
+		    board[i][j] = ch;
+		}
+	    }
+	}
+    }
+
 
 }
