@@ -227,11 +227,11 @@ public class WordSearch {
 	    }
 	}
     }
-    /*
+    
     public void MakePuzzle() {
 	ReadFile();
 	wordAdder();
 	fillIn();
     }
-    */
+    
 }
