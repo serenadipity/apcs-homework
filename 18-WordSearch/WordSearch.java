@@ -183,11 +183,15 @@ public class WordSearch {
     public void wordAdder() {
 	int i = 0;
 	while (i<numWords) {
+	    int killit = 0;
 	    int r = Rand.nextInt(Row+1);
 	    int c = Rand.nextInt(Col+1);
 	    String x = words.get(i);
 	    boolean d = false;
 	    while (d == false) {
+		if ( killit == 10 ) {
+		    break;
+		}
 		int n = Rand.nextInt(8);
 		if (n==0) {
 		    d = addWordHlf(x,r,c);
@@ -206,11 +210,12 @@ public class WordSearch {
 		} else if (n==7) {
 		    d = addWordSW(x,r,c);
 		}
+		killit = killit + 1;
 	    }
 	    i = i + 1;
 	}
     }
-    /*
+    
     public void fillIn() {
 	for (int i=0;i<board.length;i=i+1) {
 	    for (int j=0;j<board[i].length;j=j+1) {
@@ -222,6 +227,7 @@ public class WordSearch {
 	    }
 	}
     }
+    /*
     public void MakePuzzle() {
 	ReadFile();
 	wordAdder();
