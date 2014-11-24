@@ -93,7 +93,9 @@ public class WordSearch {
 		board[r][c] = w.charAt(i);
 		c = c - 1;
 	    }
+	    return true;
 	}
+	return false;
     }
     public boolean addWordVup(String w, int row, int col) {
 	int r = row;
@@ -177,29 +179,29 @@ public class WordSearch {
     }
 
     public void wordAdder() {
-	for (int i=0;i<words.length;i=i+1) {
+	for (int i=0;i<words.size();i++) {
 	    int r = Rand.nextInt(Row+1);
 	    int c = Rand.nextInt(Col+1);
-	    String x = words[i];
-	    boolean d == false;
-	    while (boolean d == false) {
+	    String x = words.get(i);
+	    boolean d = false;
+	    while (d == false) {
 		int n = Rand.nextInt(8);
 		if (n==0) {
-		    boolean d = addWordHlf(x,r,c);
+		   d = addWordHlf(x,r,c);
 		} else if (n==1) {
-		    boolean d = addWordHrt(x,r,c);
+		    d = addWordHrt(x,r,c);
 		} else if (n==2) {
-		    boolean d = addWordVup(x,r,c);
+		    d = addWordVup(x,r,c);
 		} else if (n==3) {
-		    boolean d = addWordVdw(x,r,c);
+		    d = addWordVdw(x,r,c);
 		} else if (n==4) {
-		    boolean d = addWordNE(x,r,c);
+		    d = addWordNE(x,r,c);
 		} else if (n==5) {
-		    boolean d = addWordNW(x,r,c);
+		    d = addWordNW(x,r,c);
 		} else if (n==6) {
-		    boolean d = addWordSE(x,r,c);
+		    d = addWordSE(x,r,c);
 		} else if (n==7) {
-		    boolean d = addWordSW(x,r,c);
+		    d = addWordSW(x,r,c);
 		}
 	    }
 	}
