@@ -28,7 +28,7 @@ public class WordSearch {
 	numWords = num;
     }
     public WordSearch() {
-	this(20,30,"words.txt",10);
+	this(30,30,"LameVillains.txt",24);
     }
 
     /* ------------------------- toString ------------------------- */
