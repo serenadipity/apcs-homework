@@ -1,27 +1,42 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
-public class WordSearch{
+public class WordSearch {
+
+    /* ------------------------- variables ------------------------- */
 
     private char[][] board;
+    private int Row;
+    private int Col;
+    private int numWords;
+    private Random Rand = new Random();
+    private String kind;
+    private ArrayList<String> words = new ArrayList<String>(50);
 
-    public WordSearch(int r, int c){
+    /* ------------------------- contructors ------------------------- */
+
+    public WordSearch(int r, int c, String k, int num) {
+	Row = r;
+	Col = c;
 	board = new char[r][c];
-	for (int i = 0; i < board.length; i++) {
-	    for (int j = 0; j < board[i].length; j++) {
+	for (int i=0;i<board.length;i=i+1) {
+	    for (int j=0;j<board[i].length;j=j+1) {
 		board[i][j]='.';
 	    }
 	}
-				
+	kind = k;
+	numWords = num;
     }
-    public WordSearch(){
-	this(20,30);
+    public WordSearch() {
+	this(20,30,"words.txt",10);
     }
 
-    public String toString(){
+    /* ------------------------- toString ------------------------- */
+
+    public String toString() {
 	String s = "";
-	for (int i = 0; i < board.length; i++) {
-	    for (int j = 0; j < board[i].length; j++) {
+	for (int i=0;i<board.length;i=i+1) {
+	    for (int j=0;j<board[i].length;j=j+1) {
 		s = s + board[i][j];
 	    }
 	    s = s + "\n";
@@ -29,85 +44,205 @@ public class WordSearch{
 	return s;
     }
 
-    public boolean canAdd(String w, int row, int col) {
-	int r = row, c = col;
-	boolean b;
-	for (int i=0; i<w.length(); i++) {
-	    if (board[r][c] !== ".") {
-		b = true;
-	    }
-	}
-	return b;
-    }
+    /* ------------------------- add methods ------------------------- */
 
-    public void addWordH(String w, int row, int col) {
-	int r = row, c = col;
-	for (int i=0; i<w.length();i++) {
-	    if (canAdd(w, r, c)) {
+    public boolean checker(String w, int row, int col,
+			   int rdirection, int cdirection) {
+	int r = row;
+	int c = col;
+	for(int i=0;i<w.length();i=i+1) {
+	    if ( r > Row - 1 || r < 0 ) {
+		return false;
+	    } else if ( c > Col - 1 || c < 0 ) {
+		return false;
+	    } else  if ( board[r][c] != '.' &&  w.charAt(i) != board[r][c] ) {
+		return false;
+	    }
+	    c = c + cdirection;
+	    r = r + rdirection;
+	}
+	return true;
+    }
+    public boolean addWordHlf(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	if ( checker(w, r, c, 0, 1) == true ) {
+	    for(int i=0;i<w.length();i=i+1) {
 		board[r][c] = w.charAt(i);
-		c++;
+		c = c + 1;
 	    }
-	    if(c>board[r].length) {
-		break;
+	    return true;
+	}
+	return false;
+    }
+    public boolean addWordVdw(String w, int row, int col) {
+	int r = row;
+	int c = col;	
+	if ( checker(w, r, c, 1, 0) == true ) {
+	    for(int i=0;i<w.length();i=i+1) {
+		board[r][c] = w.charAt(i);
+		r = r + 1;
 	    }
+	    return true;
+	}
+	return false;
+    }
+    public boolean addWordHrt(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	if ( checker(w, r, c, 0, -1) == true ) {
+	    for(int i=0;i<w.length();i=i+1) {
+		board[r][c] = w.charAt(i);
+		c = c - 1;
+	    }
+	    return true;
+	}
+	return false;
+    }
+    public boolean addWordVup(String w, int row, int col) {
+	int r = row;
+	int c = col;	
+	if ( checker(w, r, c, -1, 0) == true ) {
+	    for(int i=0;i<w.length();i=i+1) {
+		board[r][c] = w.charAt(i);
+		r = r - 1;
+	    }
+	    return true;
+	}
+	return false;
+    }
+    public boolean addWordSE(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	if ( checker(w, r, c, 1, 1) == true ) {
+	    for(int i=0;i<w.length();i=i+1) {
+		board[r][c] = w.charAt(i);
+		c = c + 1;
+		r = r + 1;
+	    }
+	    return true;
+	}
+	return false;
+    }
+    public boolean addWordNW(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	if ( checker(w, r, c, -1, -1) == true ) {
+	    for(int i=0;i<w.length();i=i+1) {
+		board[r][c] = w.charAt(i);
+		c = c - 1;
+		r = r - 1;
+	    }
+	    return true;
+	}
+	return false;
+    }
+    public boolean addWordNE(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	if ( checker(w, r, c, -1, 1) == true ) {
+	    for(int i=0;i<w.length();i=i+1) {
+		board[r][c] = w.charAt(i);
+		c = c + 1;
+		r = r - 1;
+	    }
+	    return true;
+	}
+	return false;
+    }
+    public boolean addWordSW(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	if ( checker(w, r, c, 1, -1) == true ) { 
+	    for(int i=0;i<w.length();i=i+1) {
+		board[r][c] = w.charAt(i);
+		c = c - 1;
+		r = r + 1;
+	    }
+	    return true;
+	}
+	return false;
+    }
+
+    /* -------------------- puzzle building methods -------------------- */
+
+    public void ReadFile() {
+	Scanner sc = null;
+	try {
+	    sc = new Scanner(new File(kind));
+	} catch (Exception e) { 
+	    System.out.println("Can't Open File");
+	    System.exit(0);
+	}
+	while (sc.hasNext()) {
+	    String s = sc.next();
+	    words.add(s);
 	}
     }
 
-    public void addWordHback(String w, int row, int col) {
-	int r = row, c = col;
-
-	for(int i=s.length()-1;i>=0;i--) {
-	    if (canAdd(w, r, c)) {
-		board[r][c] = s.charAt(i);
-		c++;
+    public void wordAdder() {
+	int i = 0;
+	while (i<numWords) {
+	    int killit = 0;
+	    int r = Rand.nextInt(Row+1);
+	    int c = Rand.nextInt(Col+1);
+	    String x = words.get(i);
+	    boolean d = false;
+	    while (d == false) {
+		if ( killit == 10 ) {
+		    break;
+		}
+		int n = Rand.nextInt(8);
+		if (n==0) {
+		    d = addWordHlf(x,r,c);
+		} else if (n==1) {
+		    d = addWordHrt(x,r,c);
+		} else if (n==2) {
+		    d = addWordVup(x,r,c);
+		} else if (n==3) {
+		    d = addWordVdw(x,r,c);
+		} else if (n==4) {
+		    d = addWordNE(x,r,c);
+		} else if (n==5) {
+		    d = addWordNW(x,r,c);
+		} else if (n==6) {
+		    d = addWordSE(x,r,c);
+		} else if (n==7) {
+		    d = addWordSW(x,r,c);
+		}
+		killit = killit + 1;
 	    }
-	    if(c<0) { 
-		break; 
+	    i = i + 1;
+	}
+    }
+    
+    public void fillIn() {
+	for (int i=0;i<board.length;i=i+1) {
+	    for (int j=0;j<board[i].length;j=j+1) {
+		if (board[i][j] == '.') {
+		    int n = Rand.nextInt(26) + 65;
+		    char ch = (char)n;
+		    board[i][j] = ch;
+		}
 	    }
 	}
     }
     
-    public void addWordV(String w, int row, int col) {
-	int r = row, c = col;
-	for (int i=0; i<w.length();i++) {
-	    board[c][r] = w.charAt(i);
-	    c++;
+    public void MakePuzzle() {
+	ReadFile();
+	wordAdder();
+	fillIn();
+    }
+
+    public String PrintPuzzle() {
+	String printer = new String();
+	for (int i=0;i<board.length;i=i+1) {
+	    for (int j=0;j<board[i].length;j=j+1) {
+		printer = printer + board[i][j] + " ";
+	    }
+	    printer = printer + "\n";
 	}
+	return printer;
     }
     
-    public void addWordSE(String w, int row, int col) {
-	int r = row, c = col;
-	for (int i=0; i<w.length();i++) {
-	    board[r][c] = w.charAt(i);
-	    c++;
-	    r++;
-	}
-    }
-
-    public void addWordNE(String w, int row, int col) {
-	int r = row, c = col;
-	for (int i=0; i<w.length();i++) {
-	    board[r][c] = w.charAt(i);
-	    c++;
-	    r--;
-	}
-    }
-
-    public void addWordNW(String w, int row, int col) {
-	int r = row, c = col;
-	for (int i=0; i<w.length();i++) {
-	    board[r][c] = w.charAt(i);
-	    c--;
-	    r--;
-	}
-    }
-
-    public void addWordSW(String w, int row, int col) {
-	int r = row, c = col;
-	for (int i=0; i<w.length();i++) {
-	    board[r][c] = w.charAt(i);
-	    c--;
-	    r++;
-	}
-    }
 }
