@@ -179,7 +179,7 @@ public class WordSearch {
 	    words.add(s);
 	}
     }
-    
+
     public void wordAdder() {
 	int i = 0;
 	while (i<numWords) {
@@ -232,6 +232,17 @@ public class WordSearch {
 	ReadFile();
 	wordAdder();
 	fillIn();
+    }
+
+    public String PrintPuzzle() {
+	String printer = new String();
+	for (int i=0;i<board.length;i=i+1) {
+	    for (int j=0;j<board[i].length;j=j+1) {
+		printer = printer + board[i][j] + " ";
+	    }
+	    printer = printer + "\n";
+	}
+	return printer;
     }
     
 }
