@@ -1,7 +1,7 @@
 public class Driver {
 
     public static void main(String[] args) {
-	SuperArray A = new SuperArray(10);
+	OrderedSuperArray A = new OrderedSuperArray(10);
 	A.add(1);
 	A.add(2);
 	A.add(3);
