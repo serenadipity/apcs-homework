@@ -37,7 +37,7 @@ public class Sarray{
 	}
 	for(int k = length;k > 0;k--){
 	    if(k > index){
-	        data[k] = data[k -1];
+	        data[k] = data[k-1];
 	    } else if (k == index){
 		data[k] = i;
 		length +=1;
@@ -75,5 +75,6 @@ public class Sarray{
 
     public static void main(String[] args) {
 	Sarray s = new Sarray();
+	return s;
     }
 }
