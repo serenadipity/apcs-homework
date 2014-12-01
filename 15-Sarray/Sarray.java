@@ -1,11 +1,12 @@
-//has a few errors that I was unable to fix
+import java.io.*;
+import java.util.*;
 
 public class Sarray{
     private int[] data;
     private int last;
     
     public Sarray(){
-	data = int[10];
+	data = new int[10];
 	// start array with size 10
 	last = 0;
     }
@@ -20,7 +21,7 @@ public class Sarray{
 	return index;
     }
 
-    last = find();
+    //last = find();
 
     public void add(int i) {
 	// add to end

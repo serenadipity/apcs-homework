@@ -1,30 +1,35 @@
 public class SuperArray {
 
-    private int[] data;
-    private int nextBlank;
-    private int endpt;
+    private String[] data;
 
-    public SuperArray( int i ) {
-	data = new int[i];
-	nextBlank = 0;
-	endpt = i;
-    }
-
-    public String toString(){
-	String s="";
-	for (int i=0;i<data.length;i++){
-	    s=s+data[i]+", ";
+    public SuperArray() {
+	data = new String[20];
+	for (int i=0; i<data.length, i++) {
+	    data[i] = "";
 	}
-	return s;
     }
 
-    public void add( int i ) {
+    public SuperArray(int i) {
+	data = new String[i];
+	for (int j=0; j<data.length; j++) {
+	    data[j]="";
+	}
+    }
+
+    public boolean add(String str) {
+	int i = 0;
+	while (data[i]!="") {
+	    i++;
+	}
+	
+	    
+		
 	grow();
-	for (int x=0;data[nextBlank]!=0;x=x+1) {
-	    nextBlank = nextBlank + 1;
+	int i = 0;
+	while (data[i]!="") {
+	    i++;
 	}
-	data[nextBlank] = i;
-	nextBlank = nextBlank + 1;
+	data[i] = str;
     }
 
     public void add( int index, int i ) {
