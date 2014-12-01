@@ -1,9 +1,13 @@
-import java.io.*;
-import java.util.*;
-
 public class OrderedSuperArray extends SuperArray {
-    private String[] s;
 
+    private String[] data;
+    private int nextBlank;
+    private int endpt;
 
-    public static void main(String[] args) {
-	
+    public OrderedSuperArray( int i ) {
+	data = new String[i];
+	nextBlank = 0;
+	endpt = i;
+    }
+    
+}

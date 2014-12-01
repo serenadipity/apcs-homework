@@ -2,8 +2,7 @@ public class Driver {
 
     public static void main(String[] args) {
 	OrderedSuperArray A = new OrderedSuperArray(10);
-	A.add("hi");
-	/*
+	A.add(1);
 	A.add(2);
 	A.add(3);
 	A.add(4);
@@ -16,7 +15,6 @@ public class Driver {
 	A.add(11);
 	A.add(18,18);
 	A.set(3,33);
-	*/
 	System.out.println(A);
 	int a = A.size();
 	System.out.println(a);
