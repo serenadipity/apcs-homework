@@ -100,7 +100,7 @@ public class SuperArray {
     }
     
     public static void main(String[] args){
-	SuperArray as = new SuperArray(10);
-	System.out.println(as.toString());
+	SuperArray s = new SuperArray(10);
+	System.out.println(s.toString());
     }
 }
