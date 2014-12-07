@@ -107,7 +107,7 @@ public class SuperArray{
 	    for (k = i; k > 0 && newvalue.compareTo(data[k-1])<0;k--){
     		data[k] = data[k-1];
 	    }
-	    data[ind]=newvalue;
+	    data[k]=newvalue;
     	}
     }
     
@@ -122,7 +122,7 @@ public class SuperArray{
 	    for (int n=i;n<data.length;n++){
 	        if (t.compareTo(data[n]) > 0){
 		    t = data[n];
-		    ind = n;
+		    k = n;
 		}
 	    }
 	    data[k] = s;
