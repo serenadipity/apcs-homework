@@ -147,4 +147,25 @@ public class SuperArray{
     			}
     		}
     	}
+    	public static void main(String[] args){
+    		SuperArray s = new SuperArray(10);
+    		s.add("hi");
+    		s.add("hello");
+    		s.add("hola");
+    		s.add("ciao");
+    		s.add("bonjour");
+    		s.add("namaste");
+    		s.add("konichiwa");
+    		s.add("salut");
+    		s.add("ola");
+    		s.add("aloha");
+    		s.add("gutentag");
+    		s.add("ahoj");
+    		s.add("nihao");
+    		s.add("salve");
+    		s.add("salam");
+    		s.add("salud");
+    		s.bsort();
+    		System.out.println(as.toString());
+    	}
     }
