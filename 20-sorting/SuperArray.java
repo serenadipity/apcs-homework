@@ -6,7 +6,11 @@ public class SuperArray{
     public SuperArray(){
     	data = new String[10];
     	for (int j=0;j<data.length;j++){
+<<<<<<< HEAD
 	    data[j]="";
+=======
+    		data[j]="";
+>>>>>>> 09233ebe3b89a41690fe5c8ea5955780ecdff2ee
     	}
     }
     public SuperArray(int i){
@@ -39,6 +43,33 @@ public class SuperArray{
     	}
 	return true;
     }
+<<<<<<< HEAD
+=======
+    public boolean add(String i){
+    	if (data.length == size()){
+	    String[] s = new String[data.length + 5];
+	    for (int n=0;n<data.length;n++){
+		s[n] = data[n];
+	    }
+	    data = s;
+	    for(int n=0;n<data.length;n++){
+		if(data[n].equals("")){
+		    data[n] = i;
+		    break;
+		}
+	    }
+    	}
+    	else{
+	    for(int n=0;n<data.length;n++){
+		if(data[n].equals("")){
+		    data[n] = i;
+		    break;
+		}
+	    }
+    	}
+	return true;
+    }
+>>>>>>> 09233ebe3b89a41690fe5c8ea5955780ecdff2ee
    
     public void add(int index, String i){
     	if (data.length>size()){
@@ -134,6 +165,7 @@ public class SuperArray{
     	String s;
     	int counter = 0;
     	while (counter<data.length){
+<<<<<<< HEAD
 	    for (int i=0;i<data.length-1;i++){
 		s = data[i+1];
 		t = data[i];
@@ -180,3 +212,40 @@ public class SuperArray{
     }
 }
 
+=======
+    		for (int i=0;i<data.length-1;i++){
+    			s = data[i+1];
+    			t = data[i];
+    			if (t.compareTo(s)>0){
+    				data[i] = s;
+    				data[i+1] = t;
+    				counter = 0;
+    			}
+    			else{
+    				counter++;
+    			}
+    		}
+    	}
+    	public static void main(String[] args){
+    		SuperArray s = new SuperArray(10);
+    		s.add("hi");
+    		s.add("hello");
+    		s.add("hola");
+    		s.add("ciao");
+    		s.add("bonjour");
+    		s.add("namaste");
+    		s.add("konichiwa");
+    		s.add("salut");
+    		s.add("ola");
+    		s.add("aloha");
+    		s.add("gutentag");
+    		s.add("ahoj");
+    		s.add("nihao");
+    		s.add("salve");
+    		s.add("salam");
+    		s.add("salud");
+    		s.bsort();
+    		System.out.println(as.toString());
+    	}
+    }
+>>>>>>> 09233ebe3b89a41690fe5c8ea5955780ecdff2ee
