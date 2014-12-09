@@ -14,12 +14,12 @@ public class SuperArray {
     }
     public boolean add(String i){
     	if (data.length == size()){
-	    String[] s = new s[data.length + 5];
+	    String[] s = new String[data.length + 5];
 	    for (int m=0;m<data.length;m++){
 		s[m] = data[m];
 	    }
 	    data = s;
-	    for(int j=0;n<data.length;j++){
+	    for(int j=0;j<data.length;j++){
 		if(data[j].compareTo("") == 0){
 		    data[j] = i;
 		    break;
