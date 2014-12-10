@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public abstract class Basechar{
+public abstract class Basechar implements Comparable{
     private int health,speed,defense,strength,magic; //base stats
     //should manna be only in mage, or basechar too?
     private Random r = new Random();
@@ -151,5 +151,10 @@ public abstract class Basechar{
      maybe it should be implemented in Driver? Or in the attack method itself? idk
       --Daisy 10/18/2014
     */
+
+    public int compareTo(Object other) {
+	Basechar o = (Basechar)other;
+	return (this.name).compareTo(o.name);
+    }
 	    
 }
