@@ -33,7 +33,7 @@ class Interval implements Comparable{
 	Interval o = (Interval)other;
 	/*
 	if (this.low == o.low) {
-	    return this.high - o.high;
+	    return this.high - o.high; 
 	}
 	else {
 	    return this.low - o.low;
