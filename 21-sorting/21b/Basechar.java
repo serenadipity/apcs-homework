@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public abstract class Basechar{
+public abstract class Basechar implements Comparable{
     private int health,speed,defense,strength,magic; //base stats
     //should manna be only in mage, or basechar too?
     private Random r = new Random();
