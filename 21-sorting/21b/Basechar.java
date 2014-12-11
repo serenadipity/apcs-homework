@@ -151,5 +151,11 @@ public abstract class Basechar{
      maybe it should be implemented in Driver? Or in the attack method itself? idk
       --Daisy 10/18/2014
     */
+    
+     public int compareTo(Object other){
+     	Basechar o = (Basechar)other;
+     	return this.name.compareTo(o.name);
+     	
+     }
 	    
 }
