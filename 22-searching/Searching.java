@@ -82,10 +82,18 @@ public class Searching{
     }
     
     public static void main(String[] args){
-        Searching s = new Searching(10);
+        Searching s = new Searching(50);
         for (int i=0; i < 50; i++) {
             s.additem(i);
         }
+        System.out.println(s);
         s.sort();
+        System.out.println(s);
+        System.out.println(s.lsearch(7));
+        System.out.println(s.lsearch(4));
+        System.out.println(s.bsearch(2));
+        System.out.println(s.bsearch(9));
+        System.out.println(s.rbsearch(6));
+        System.out.println(s.rbsearch(1));
     }
 }
