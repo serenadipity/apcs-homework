@@ -1,0 +1,32 @@
+Code Review
+
+https://github.com/Melisssssssssa/APCSFinalProj.git
+
+
+Capture_pde.pde:
+
+- Lines 16-19 --> A little bit confused how this code works. Maybe add comments to clarify?
+
+- Lines 35-36 --> I think there's a method open() that you could use to call the saved image?
+
+- Line 39 --> You should put some text in your processing window telling the user what 'a' does
+
+- LInes 41-46 --> Confused what the function of the random number is?
+
+
+
+pleasework3_pde:
+
+- Line 2 --> What exactly does ycam represent? Just a bit unclear (maybe add a comment)
+
+- Lines 38-42 --> Maybe rename variable x? Not sure what it represents
+
+
+Overall:
+
+- Seems pretty straightforward and clear
+
+- Just add a few more comments and rename a few variables to make the code even more clear
+
+- Maybe try organizing the overall structure in a way that is more clear to read (show a progression more
+	clearly, similar to methods and a driver in regular java files) 
